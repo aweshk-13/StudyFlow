@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyFlow | Student Productivity Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<section id="authScreen" class="auth-screen">
+    <div class="auth-card">
+
+        <div class="auth-logo">📚</div>
+        <h1>StudyFlow</h1>
+        <p class="auth-subtitle">Your personal productivity space</p>
+
+        <div class="auth-tabs">
+            <button type="button" id="signInTab" class="auth-tab active">
+                Sign In
+            </button>
+
+            <button type="button" id="signUpTab" class="auth-tab">
+                Sign Up
+            </button>
+        </div>
+
+        <form id="authForm">
+            <label for="authName" id="nameLabel" hidden>
+                Your Name
+            </label>
+            <input
+                type="text"
+                id="authName"
+                placeholder="Enter your name"
+                autocomplete="name"
+                hidden
+            >
+
+            <label for="authEmail">Email Address</label>
+            <input
+                type="email"
+                id="authEmail"
+                placeholder="Enter your email"
+                autocomplete="email"
+                required
+            >
+
+            <label for="authPassword">Password</label>
+            <input
+                type="password"
+                id="authPassword"
+                placeholder="Enter any demo password"
+                autocomplete="current-password"
+                required
+            >
+
+            <button type="submit" id="authSubmit">
+                Sign In
+            </button>
+        </form>
+
+        <p id="authMessage" class="auth-message">
+            Welcome back! Please sign in to continue.
+        </p>
+
+        <p class="demo-note">
+            Demo login only — no real account is created.
+        </p>
+
+    </div>
+</section>
+
+<div class="app-layout" id="appLayout" hidden>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h2>📚 StudyFlow</h2>
+            <p>STUDENT WORKSPACE</p>
+        </div>
+
+        <p class="nav-heading">MENU</p>
+
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="#tasks" class="nav-link" data-section="tasks">
+                <span>✓</span> My Tasks
+            </a>
+
+            <a href="#calendar" class="nav-link" data-section="calendar">
+                <span>▣</span> Calendar
+            </a>
+
+            <a href="#pomodoro" class="nav-link" data-section="pomodoro">
+                <span>◷</span> Pomodoro
+            </a>
+
+            <a href="#settings" class="nav-link" data-section="settings">
+                <span>⚙</span> Settings
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Stay focused.</p>
+            <p>Keep growing. 🚀</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-area">
+
+        <header>
+            <div class="header-content">
+                <div>
+                    <h1>StudyFlow</h1>
+                    <p>Your personal student productivity hub</p>
+                </div>
+
+                <button id="themeToggle" type="button">
+                    🌙 Dark Mode
+                    <button type="button" id="logoutButton" class="logout-button">
+    Logout ↪
+</button>
+                </button>
+            </div>
+        </header>
+
+        <main class="container">
+
+            <!-- Dashboard -->
+            <section id="dashboard" class="page-section">
+
+                <section class="welcome-section">
+                    <div>
+                        <p class="welcome-label">YOUR PERSONAL WORKSPACE</p>
+                        <h2>Welcome to StudyFlow 👋</h2>
+                        <p>Plan your day, manage your tasks and achieve your goals.</p>
+                    </div>
+                    <div class="welcome-icon">📚</div>
+                </section>
+
+                <section class="stats">
+                    <div class="card">
+                        <h3>Total Tasks</h3>
+                        <p id="totalTasks">0</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Completed</h3>
+                        <p id="completedTasks">0</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Pending</h3>
+                        <p id="pendingTasks">0</p>
+                    </div>
+                </section>
+
+                <section class="task-section progress-section">
+                    <h2>Your Daily Progress</h2>
+
+                    <div class="progress-info">
+                        <span>Completion</span>
+                        <span id="progressPercent">0%</span>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div id="progressFill"></div>
+                    </div>
+
+                    <p id="progressMessage">Start completing your tasks!</p>
+                </section>
+
+            </section>
+
+            <!-- Tasks -->
+            <section id="tasks" class="page-section" hidden>
+
+                <section class="task-section">
+                    <h2>Add a New Task</h2>
+
+                    <form id="taskForm">
+                        <input type="text" id="taskInput"
+                            placeholder="Enter your task..." required>
+
+                        <select id="priority">
+                            <option value="Low">Low Priority</option>
+                            <option value="Medium">Medium Priority</option>
+                            <option value="High">High Priority</option>
+                        </select>
+
+                        <input type="date" id="dueDate">
+
+                        <button type="submit">Add Task</button>
+                    </form>
+                </section>
+
+                <section class="task-section">
+                    <h2>My Tasks</h2>
+
+                    <div class="filters">
+                        <button class="filter active" data-filter="all">All</button>
+                        <button class="filter" data-filter="pending">Pending</button>
+                        <button class="filter" data-filter="completed">Completed</button>
+                    </div>
+
+                    <div id="taskList">
+                        <p>No tasks yet. Add your first task!</p>
+                    </div>
+                </section>
+
+            </section>
+
+            <!-- Calendar -->
+            <section id="calendar" class="page-section" hidden>
+                <section class="task-section">
+                    <h2>📅 Calendar & Deadlines</h2>
+                    <p>Keep track of your upcoming task deadlines.</p>
+                    <div id="calendarTasks"></div>
+                </section>
+            </section>
+
+            <!-- Pomodoro -->
+            <section id="pomodoro" class="page-section" hidden>
+                <section class="task-section pomodoro-section">
+                    <h2>Focus Timer</h2>
+
+                    <p class="timer-subtitle">
+                        Stay focused. Make every minute count!
+                    </p>
+
+                    <div class="timer-display" id="timerDisplay">25:00</div>
+
+                    <p id="timerStatus">Ready to focus?</p>
+
+                    <div class="timer-buttons">
+                        <button id="startTimer">Start</button>
+                        <button id="pauseTimer">Pause</button>
+                        <button id="resetTimer">Reset</button>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Settings -->
+            <section id="settings" class="page-section" hidden>
+                <section class="task-section">
+                    <h2>⚙ Settings</h2>
+                    <p>Personalise your StudyFlow workspace.</p>
+                    <button id="settingsThemeToggle" type="button">
+                        Change Theme
+                    </button>
+                </section>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Made with ❤️ by a student, for students.</p>
+        </footer>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
