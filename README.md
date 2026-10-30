@@ -1,7 +1,7 @@
 ## 📸 Screenshots
 
 ### Login Page
-![StudyFlow Login](screenshots/login.png)
+![StudyFlow Login](Screenshot 2026-10-31 012731.png)
 
 ### Dashboard
 ![StudyFlow Dashboard](screenshots/dashboard.png)
