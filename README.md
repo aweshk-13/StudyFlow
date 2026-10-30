@@ -1,3 +1,21 @@
+## 📸 Screenshots
+
+### Login Page
+
+login.png
+
+### Dashboard
+
+dashboard.png
+
+### Task Management
+
+tasks.png
+
+### Pomodoro Timer
+
+pomodoro.png
+
 ## ✨ Features
 
 - **User Login Interface:** Demo Sign In and Sign Up screens.
