@@ -1,7 +1,7 @@
 ## 📸 Screenshots
 
 ### Login Page
-![StudyFlow Login](screenshots/login.png)
+![StudyFlow Login]login.png.png
 
 ### Dashboard
 ![StudyFlow Dashboard](screenshots/dashboard.png)
