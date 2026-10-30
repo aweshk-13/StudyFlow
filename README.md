@@ -1,21 +1,16 @@
 ## 📸 Screenshots
 
 ### Login Page
-
-login.png
+![StudyFlow Login](login.png)
 
 ### Dashboard
-
-dashboard.png
+![StudyFlow Dashboard](dashboard.png)
 
 ### Task Management
-
-tasks.png
+![StudyFlow Tasks](tasks.png)
 
 ### Pomodoro Timer
-
-pomodoro.png
-
+![StudyFlow Pomodoro](pomodoro.png)
 ## ✨ Features
 
 - **User Login Interface:** Demo Sign In and Sign Up screens.
