@@ -1,22 +1,3 @@
-## 📸 Screenshots
-
-### Login Page
-![StudyFlow Login]login.png.png
-
-### Dashboard
-![StudyFlow Dashboard](screenshots/dashboard.png)
-
-### Task Management
-![StudyFlow Tasks](screenshots/tasks.png)
-
-### Pomodoro Timer
-![StudyFlow Pomodoro](screenshots/pomodoro.png)
-# 📚 StudyFlow – Student Productivity Dashboard
-
-StudyFlow is a simple and interactive student productivity web application designed to help students manage their daily tasks, track progress, and improve time management.
-
-It provides an organized workspace where students can plan their activities, monitor deadlines, and stay productive.
-
 ## ✨ Features
 
 - **User Login Interface:** Demo Sign In and Sign Up screens.
