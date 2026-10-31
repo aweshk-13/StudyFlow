@@ -31,6 +31,7 @@
             <label for="authName" id="nameLabel" hidden>
                 Your Name
             </label>
+
             <input
                 type="text"
                 id="authName"
@@ -73,10 +74,13 @@
     </div>
 </section>
 
+
+<!-- MAIN APPLICATION -->
 <div class="app-layout" id="appLayout" hidden>
 
-    <!-- Sidebar -->
+    <!-- SIDEBAR -->
     <aside class="sidebar">
+
         <div class="sidebar-brand">
             <h2>📚 StudyFlow</h2>
             <p>STUDENT WORKSPACE</p>
@@ -85,6 +89,7 @@
         <p class="nav-heading">MENU</p>
 
         <nav class="sidebar-nav">
+
             <a href="#dashboard" class="nav-link active" data-section="dashboard">
                 <span>▦</span> Dashboard
             </a>
@@ -101,54 +106,76 @@
                 <span>◷</span> Pomodoro
             </a>
 
+            <a href="#ai-planner" class="nav-link" data-section="ai-planner">
+                <span>🤖</span> AI Study Planner
+            </a>
+
             <a href="#settings" class="nav-link" data-section="settings">
                 <span>⚙</span> Settings
             </a>
-            <a href="#ai-planner" class="nav-link" data-section="ai-planner">
-    <span>🤖</span> AI Study Planner
-</a>
+
         </nav>
 
         <div class="sidebar-bottom">
             <p>Stay focused.</p>
             <p>Keep growing. 🚀</p>
         </div>
+
     </aside>
 
-    <!-- Main Content -->
+
+    <!-- MAIN AREA -->
     <div class="main-area">
 
+        <!-- HEADER -->
         <header>
             <div class="header-content">
+
                 <div>
                     <h1>StudyFlow</h1>
                     <p>Your personal student productivity hub</p>
                 </div>
 
-                <button id="themeToggle" type="button">
-                    🌙 Dark Mode
+                <div class="header-actions">
+
+                    <button id="themeToggle" type="button">
+                        🌙 Dark Mode
+                    </button>
+
                     <button type="button" id="logoutButton" class="logout-button">
-    Logout ↪
-</button>
-                </button>
+                        Logout ↪
+                    </button>
+
+                </div>
+
             </div>
         </header>
 
+
+        <!-- MAIN CONTENT -->
         <main class="container">
 
-            <!-- Dashboard -->
+
+            <!-- DASHBOARD -->
             <section id="dashboard" class="page-section">
 
                 <section class="welcome-section">
                     <div>
                         <p class="welcome-label">YOUR PERSONAL WORKSPACE</p>
+
                         <h2>Welcome to StudyFlow 👋</h2>
-                        <p>Plan your day, manage your tasks and achieve your goals.</p>
+
+                        <p>
+                            Plan your day, manage your tasks and achieve your goals.
+                        </p>
                     </div>
+
                     <div class="welcome-icon">📚</div>
                 </section>
 
+
                 <section class="stats">
+
                     <div class="card">
                         <h3>Total Tasks</h3>
                         <p id="totalTasks">0</p>
@@ -163,9 +190,12 @@
                         <h3>Pending</h3>
                         <p id="pendingTasks">0</p>
                     </div>
+
                 </section>
 
+
                 <section class="task-section progress-section">
+
                     <h2>Your Daily Progress</h2>
 
                     <div class="progress-info">
@@ -177,20 +207,31 @@
                         <div id="progressFill"></div>
                     </div>
 
-                    <p id="progressMessage">Start completing your tasks!</p>
+                    <p id="progressMessage">
+                        Start completing your tasks!
+                    </p>
+
                 </section>
 
             </section>
 
-            <!-- Tasks -->
+
+
+            <!-- TASKS -->
             <section id="tasks" class="page-section" hidden>
 
                 <section class="task-section">
+
                     <h2>Add a New Task</h2>
 
                     <form id="taskForm">
-                        <input type="text" id="taskInput"
-                            placeholder="Enter your task..." required>
+
+                        <input
+                            type="text"
+                            id="taskInput"
+                            placeholder="Enter your task..."
+                            required
+                        >
 
                         <select id="priority">
                             <option value="Low">Low Priority</option>
@@ -201,10 +242,14 @@
                         <input type="date" id="dueDate">
 
                         <button type="submit">Add Task</button>
+
                     </form>
+
                 </section>
 
+
                 <section class="task-section">
+
                     <h2>My Tasks</h2>
 
                     <div class="filters">
@@ -216,134 +261,162 @@
                     <div id="taskList">
                         <p>No tasks yet. Add your first task!</p>
                     </div>
+
                 </section>
 
             </section>
 
-            <!-- Calendar -->
+
+
+            <!-- CALENDAR -->
             <section id="calendar" class="page-section" hidden>
+
                 <section class="task-section">
+
                     <h2>📅 Calendar & Deadlines</h2>
+
                     <p>Keep track of your upcoming task deadlines.</p>
+
                     <div id="calendarTasks"></div>
+
                 </section>
+
             </section>
 
-            <!-- Pomodoro -->
+
+
+            <!-- POMODORO -->
             <section id="pomodoro" class="page-section" hidden>
+
                 <section class="task-section pomodoro-section">
+
                     <h2>Focus Timer</h2>
 
                     <p class="timer-subtitle">
                         Stay focused. Make every minute count!
                     </p>
 
-                    <div class="timer-display" id="timerDisplay">25:00</div>
+                    <div class="timer-display" id="timerDisplay">
+                        25:00
+                    </div>
 
                     <p id="timerStatus">Ready to focus?</p>
 
                     <div class="timer-buttons">
+
                         <button id="startTimer">Start</button>
                         <button id="pauseTimer">Pause</button>
                         <button id="resetTimer">Reset</button>
+
                     </div>
+
                 </section>
+
             </section>
-            <a href="#ai-planner" class="nav-link" data-section="ai-planner">
-    <span>🤖</span> AI Study Planner
-</a>
 
-<!-- AI STUDY PLANNER -->
-<section id="ai-planner" class="page-section" hidden>
-    <div class="task-section">
-        <h2>🤖 AI Study Planner</h2>
-        <p>Let AI help you organise your study schedule.</p>
 
-        <form id="aiPlannerForm">
-            <label for="aiSubjects">Your subjects</label>
-            <input
-                type="text"
-                id="aiSubjects"
-                placeholder="Example: C, Mathematics, Physics"
-                required
-            >
 
-            <label for="aiHours">Available study hours per day</label>
-            <input
-                type="number"
-                id="aiHours"
-                min="1"
-                max="12"
-                placeholder="Example: 4"
-                required
-            >
+            <!-- AI STUDY PLANNER -->
+            <section id="ai-planner" class="page-section" hidden>
 
-            <label for="aiDeadlines">Upcoming exams or deadlines</label>
-            <input
-                type="text"
-                id="aiDeadlines"
-                placeholder="Example: Maths exam next Monday"
-            >
+                <div class="task-section">
 
-            <button type="submit" id="generatePlan">
-                Generate My Study Plan
-            </button>
-        </form>
+                    <h2>🤖 AI Study Planner</h2>
 
-        <div id="aiPlanStatus"></div>
-        <div id="aiPlanResult"></div>
-    </div>
-</section>
-            <!-- Settings -->
-             <section id="ai-planner" class="page-section" hidden>
-    <div class="task-section">
-        <h2>🤖 AI Study Planner</h2>
-        <p>Let AI help you organise your study schedule.</p>
+                    <p>
+                        Let AI help you organise your study schedule.
+                    </p>
 
-        <form id="aiPlannerForm">
-            <label for="aiSubjects">Your subjects</label>
-            <input type="text" id="aiSubjects"
-                placeholder="Example: C, Mathematics, Physics" required>
+                    <form id="aiPlannerForm">
 
-            <label for="aiHours">Available study hours per day</label>
-            <input type="number" id="aiHours" min="1" max="12"
-                placeholder="Example: 4" required>
+                        <label for="aiSubjects">Your subjects</label>
 
-            <label for="aiDeadlines">Upcoming exams or deadlines</label>
-            <input type="text" id="aiDeadlines"
-                placeholder="Example: Maths exam next Monday">
+                        <input
+                            type="text"
+                            id="aiSubjects"
+                            placeholder="Example: C, Mathematics, Physics"
+                            required
+                        >
 
-            <button type="submit" id="generatePlan">
-                Generate My Study Plan
-            </button>
-        </form>
 
-        <div id="aiPlanStatus"></div>
-        <div id="aiPlanResult"></div>
-    </div>
-</section>
+                        <label for="aiHours">
+                            Available study hours per day
+                        </label>
+
+                        <input
+                            type="number"
+                            id="aiHours"
+                            min="1"
+                            max="12"
+                            placeholder="Example: 4"
+                            required
+                        >
+
+
+                        <label for="aiDeadlines">
+                            Upcoming exams or deadlines
+                        </label>
+
+                        <input
+                            type="text"
+                            id="aiDeadlines"
+                            placeholder="Example: Maths exam next Monday"
+                        >
+
+
+                        <button type="submit" id="generatePlan">
+                            Generate My Study Plan
+                        </button>
+
+                    </form>
+
+
+                    <div id="aiPlanStatus" aria-live="polite"></div>
+
+                    <div id="aiPlanResult" aria-live="polite"></div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- SETTINGS -->
             <section id="settings" class="page-section" hidden>
+
                 <section class="task-section">
+
                     <h2>⚙ Settings</h2>
-                    <p>Personalise your StudyFlow workspace.</p>
+
+                    <p>
+                        Personalise your StudyFlow workspace.
+                    </p>
+
                     <button id="settingsThemeToggle" type="button">
                         Change Theme
                     </button>
+
                 </section>
+
             </section>
+
 
         </main>
 
+
+        <!-- FOOTER -->
         <footer>
             <p>Made with ❤️ by a student, for students.</p>
         </footer>
 
     </div>
+
 </div>
 
+
+<!-- JAVASCRIPT FILES -->
 <script src="script.js"></script>
 <script type="module" src="ai.js"></script>
+
 </body>
 </html>
-
-
