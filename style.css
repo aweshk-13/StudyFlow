@@ -801,3 +801,805 @@ body.dark-mode .auth-tab:not(.active) {
 [hidden] {
     display: none !important;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f4f8;
+    color: #20243a;
+}
+
+header {
+    background: #24264b;
+    color: white;
+    padding: 30px 8%;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #c9c9df;
+}
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card, .task-section {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    color: #777;
+    font-size: 15px;
+}
+
+.card p {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 12px;
+    color: #6255d9;
+}
+
+.task-section {
+    margin-bottom: 25px;
+}
+
+.task-section h2 {
+    margin-bottom: 20px;
+}
+
+#taskForm {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+input, select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+#taskInput {
+    flex: 1;
+    min-width: 180px;
+}
+
+button {
+    background: #6255d9;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter {
+    background: #e9e8f8;
+    color: #49417e;
+}
+
+.filter.active {
+    background: #6255d9;
+    color: white;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.task-info {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+.task-info small {
+    display: block;
+    color: #777;
+    margin-top: 6px;
+}
+
+.task.done .task-info strong {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.task-actions {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.delete-btn {
+    background: #e34b5c;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #777;
+}
+
+@media (max-width: 650px) {
+    .container {
+        width: 92%;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    #taskForm {
+        flex-direction: column;
+    }
+
+    #taskForm input,
+    #taskForm select,
+    #taskForm button {
+        width: 100%;
+    }
+
+    .task {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+.progress-section {
+    margin-bottom: 25px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+#progressPercent {
+    color: #6255d9;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 14px;
+    background: #e9e8f8;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progressFill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #6255d9, #a78bfa);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+#progressMessage {
+    margin-top: 12px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Header layout */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Theme button */
+#themeToggle {
+    background: #ffffff;
+    color: #24264b;
+    font-weight: bold;
+}
+
+/* Dark mode theme */
+body.dark-mode {
+    background: #151522;
+    color: #f5f5fa;
+}
+
+body.dark-mode header {
+    background: #0c0c16;
+}
+
+body.dark-mode .card,
+body.dark-mode .task-section {
+    background: #242438;
+    color: #f5f5fa;
+}
+
+body.dark-mode .card h3,
+body.dark-mode .progress-info,
+body.dark-mode #progressMessage {
+    color: #c5c5d5;
+}
+
+body.dark-mode .task {
+    background: #29293f;
+    border-color: #41415b;
+}
+
+body.dark-mode .task-info small {
+    color: #c5c5d5;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+    background: #303047;
+    color: white;
+    border-color: #50506b;
+}
+
+body.dark-mode input::placeholder {
+    color: #c5c5d5;
+}
+
+body.dark-mode .filter {
+    background: #393952;
+    color: white;
+}
+
+body.dark-mode .filter.active {
+    background: #6255d9;
+}
+
+body.dark-mode footer {
+    color: #c5c5d5;
+}
+
+/* Smooth theme transition */
+body,
+header,
+.card,
+.task-section,
+.task {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+@media (max-width: 550px) {
+    .header-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* Assignment deadline alerts */
+
+.deadline-status {
+    display: block;
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.deadline-status.overdue {
+    color: #e53935;
+}
+
+.deadline-status.due-today {
+    color: #e58b17;
+}
+
+.deadline-status.upcoming {
+    color: #16a36a;
+}
+
+/* Dark mode deadline colors */
+
+body.dark-mode .deadline-status.overdue {
+    color: #ff7777;
+}
+
+body.dark-mode .deadline-status.due-today {
+    color: #ffc266;
+}
+
+body.dark-mode .deadline-status.upcoming {
+    color: #65d99a;
+}
+
+
+/* Pomodoro Timer */
+
+.pomodoro-section {
+    text-align: center;
+}
+
+.timer-subtitle {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.timer-display {
+    font-size: 65px;
+    font-weight: bold;
+    color: #6255d9;
+    margin: 20px 0;
+    font-variant-numeric: tabular-nums;
+}
+
+#timerStatus {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.timer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+#pauseTimer {
+    background: #e58b17;
+}
+
+#resetTimer {
+    background: #e34b5c;
+}
+
+/* Dark mode */
+
+body.dark-mode .timer-subtitle,
+body.dark-mode #timerStatus {
+    color: #c5c5d5;
+}
+
+body.dark-mode .timer-display {
+    color: #a78bfa;
+}
+
+/* Professional welcome section */
+
+.welcome-section {
+    background: linear-gradient(120deg, #6255d9, #8879ed);
+    color: white;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.welcome-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    opacity: 0.85;
+}
+
+.welcome-section h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    color: white;
+}
+
+.welcome-icon {
+    font-size: 55px;
+}
+
+/* Better task cards */
+
+.task {
+    padding: 18px;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* Priority indicators */
+
+.priority-high {
+    color: #e34b5c !important;
+    font-weight: bold;
+}
+
+.priority-medium {
+    color: #d18a19 !important;
+    font-weight: bold;
+}
+
+.priority-low {
+    color: #16a36a !important;
+    font-weight: bold;
+}
+
+/* Better headings */
+
+.task-section h2 {
+    font-size: 21px;
+    margin-bottom: 22px;
+}
+
+/* Dark mode welcome section */
+
+body.dark-mode .welcome-section {
+    background: linear-gradient(120deg, #39306e, #51438f);
+}
+
+/* Mobile improvements */
+
+@media (max-width: 650px) {
+    .welcome-section {
+        padding: 22px;
+    }
+
+    .welcome-section h2 {
+        font-size: 21px;
+    }
+
+    .welcome-icon {
+        font-size: 38px;
+    }
+}
+
+/* =================================
+   STUDYFLOW SIDEBAR LAYOUT
+================================= */
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: #24264b;
+    color: white;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.sidebar-brand {
+    padding: 5px 10px 35px;
+}
+
+.sidebar-brand h2 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.sidebar-brand p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #aaaad0;
+}
+
+.nav-heading {
+    color: #aaaad0;
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 0 12px;
+    margin-bottom: 14px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 14px;
+    border-radius: 9px;
+    color: #d1d1e6;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.nav-link span {
+    font-size: 19px;
+    width: 23px;
+    text-align: center;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #6255d9;
+    color: white;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding: 18px 12px;
+    border-top: 1px solid #45466b;
+    color: #c9c9df;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* Main area */
+
+.main-area {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    min-width: 0;
+}
+
+.main-area header {
+    padding: 25px 5%;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.page-section[hidden] {
+    display: none !important;
+}
+
+/* Sidebar dark mode */
+
+body.dark-mode .sidebar {
+    background: #0c0c16;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+    background: #6255d9;
+}
+
+/* Calendar */
+
+#calendarTasks {
+    margin-top: 20px;
+}
+
+/* Mobile layout */
+
+@media (max-width: 750px) {
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        position: relative;
+        padding: 15px;
+    }
+
+    .sidebar-brand {
+        padding: 5px 8px 15px;
+    }
+
+    .sidebar-brand h2 {
+        font-size: 20px;
+    }
+
+    .sidebar-brand p,
+    .nav-heading,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .nav-link {
+        flex: 1 1 auto;
+        justify-content: center;
+        padding: 10px 8px;
+        font-size: 12px;
+        gap: 5px;
+    }
+
+    .nav-link span {
+        font-size: 16px;
+        width: auto;
+    }
+
+    .app-layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-area {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .main-area header {
+        padding: 22px 5%;
+    }
+
+    .container {
+        width: 92%;
+        margin: 22px auto;
+    }
+}
+
+/* =================================
+   STUDYFLOW LOGIN SCREEN
+================================= */
+
+.auth-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: linear-gradient(135deg, #24264b, #6255d9);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    color: #20243a;
+    padding: 38px;
+    border-radius: 18px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.auth-logo {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.auth-card h1 {
+    color: #6255d9;
+    font-size: 30px;
+}
+
+.auth-subtitle {
+    color: #777;
+    margin: 10px 0 25px;
+}
+
+.auth-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.auth-tab {
+    flex: 1;
+    background: #eeeefa;
+    color: #49417e;
+}
+
+.auth-tab.active {
+    background: #6255d9;
+    color: white;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+}
+
+.auth-card label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.auth-card input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.auth-card form button {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.auth-message {
+    color: #6255d9;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+.demo-note {
+    color: #888;
+    font-size: 11px;
+    margin-top: 15px;
+}
+
+.logout-button {
+    background: #e34b5c;
+    color: white;
+}
+
+body.dark-mode .auth-screen {
+    background: linear-gradient(135deg, #10101c, #39306e);
+}
+
+body.dark-mode .auth-card {
+    background: #242438;
+    color: white;
+}
+
+body.dark-mode .auth-card h1 {
+    color: #a78bfa;
+}
+
+body.dark-mode .auth-subtitle,
+body.dark-mode .demo-note {
+    color: #c5c5d5;
+}
+
+body.dark-mode .auth-card input {
+    background: #303047;
+    color: white;
+    border-color: #50506b;
+}
+
+body.dark-mode .auth-tab:not(.active) {
+    background: #393952;
+    color: white;
+}
+/* Fix login and dashboard screen visibility */
+
+[hidden] {
+    display: none !important;
+}
